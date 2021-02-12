@@ -1,6 +1,4 @@
-package com.agilewriters.workshop.repos;
-
-import com.agilewriters.workshop.entities.Member;
+package com.agilewriters.workshop.members;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

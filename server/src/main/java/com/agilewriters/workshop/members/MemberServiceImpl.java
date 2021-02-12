@@ -1,10 +1,7 @@
-package com.agilewriters.workshop.services;
+package com.agilewriters.workshop.members;
 
 import java.util.List;
 import java.util.Optional;
-
-import com.agilewriters.workshop.entities.Member;
-import com.agilewriters.workshop.repos.MemberRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

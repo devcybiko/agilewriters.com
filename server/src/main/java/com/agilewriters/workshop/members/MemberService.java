@@ -1,9 +1,7 @@
-package com.agilewriters.workshop.services;
+package com.agilewriters.workshop.members;
 
 import java.util.List;
 import java.util.Optional;
-
-import com.agilewriters.workshop.entities.Member;
 
 
 public interface MemberService {
