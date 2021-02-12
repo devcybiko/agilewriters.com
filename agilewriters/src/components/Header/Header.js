@@ -15,10 +15,22 @@ import Drawer from "@material-ui/core/Drawer";
 import Menu from "@material-ui/icons/Menu";
 // core components
 import styles from "assets/jss/material-kit-react/components/headerStyle.js";
+import constants from "constants.js";
+import HeaderLinks from "components/Header/HeaderLinks.js";
+import { Link } from "react-router-dom";
+
+import glstools from "glstools";
+const gobjs = glstools.objects;
 
 const useStyles = makeStyles(styles);
 
-export default function Header(props) {
+export default function Header(_props) {
+  let props = gobjs.merge(_props);
+  props.brand = constants.title;
+  props.rightLinks = new HeaderLinks;
+  props.color = "transparent";
+  props.absolute = "absolute";
+
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   React.useEffect(() => {
@@ -47,7 +59,7 @@ export default function Header(props) {
     } else {
       document.body
         .getElementsByTagName("header")[0]
-        .classList.add(classes[color]);
+        .classList.add(classes[color || "transparent"]);
       document.body
         .getElementsByTagName("header")[0]
         .classList.remove(classes[changeColorOnScroll.color]);
@@ -60,7 +72,7 @@ export default function Header(props) {
     [classes.absolute]: absolute,
     [classes.fixed]: fixed
   });
-  const brandComponent = <Button className={classes.title}>{brand}</Button>;
+  const brandComponent = <Button className={classes.title}><Link to="/landing-page" >{brand}</Link></Button>;
   return (
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>

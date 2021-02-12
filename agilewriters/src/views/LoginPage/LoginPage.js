@@ -8,7 +8,6 @@ import Email from "@material-ui/icons/Email";
 import People from "@material-ui/icons/People";
 // core components
 import Header from "components/Header/Header.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
 import Footer from "components/Footer/Footer.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -34,13 +33,7 @@ export default function LoginPage(props) {
   const { ...rest } = props;
   return (
     <div>
-      <Header
-        absolute
-        color="transparent"
-        brand="Material Kit React"
-        rightLinks={<HeaderLinks />}
-        {...rest}
-      />
+      <Header {...rest} />
       <div
         className={classes.pageHeader}
         style={{
@@ -86,7 +79,7 @@ export default function LoginPage(props) {
                       </Button>
                     </div>
                   </CardHeader>
-                  <p className={classes.divider}>Or Be Classical</p>
+                  <p className={classes.divider}>Welcome Back...</p>
                   <CardBody>
                     <CustomInput
                       labelText="First Name..."
@@ -128,9 +121,7 @@ export default function LoginPage(props) {
                         type: "password",
                         endAdornment: (
                           <InputAdornment position="end">
-                            <Icon className={classes.inputIconsColor}>
-                              lock_outline
-                            </Icon>
+                            <Icon className={classes.inputIconsColor}/>
                           </InputAdornment>
                         ),
                         autoComplete: "off"
@@ -138,9 +129,7 @@ export default function LoginPage(props) {
                     />
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
-                    <Button simple color="primary" size="lg">
-                      Get started
-                    </Button>
+                    <Button>Enter</Button>
                   </CardFooter>
                 </form>
               </Card>
