@@ -1,0 +1,11 @@
+{
+    "name": "member",
+    "database": "agilewritersdb",
+    "fields": {
+        "fname": "string,64",
+        "lname": "string,64",
+        "email": "string,128,unique",
+        "password": "string,128,,secret"
+    },
+    "services": ["get", "put", "post", "delete", "getall"]
+}

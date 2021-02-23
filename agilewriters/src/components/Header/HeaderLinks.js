@@ -22,8 +22,8 @@ export default function HeaderLinks(props) {
   const classes = useStyles();
   return (
     <List className={classes.list}>
-      <ListItem className={classes.listItem}><Link className={classes.navLink} to="/login-page" >Login</Link></ListItem>
-      <ListItem className={classes.listItem}><Link className={classes.navLink} to="/register-page" >Register</Link></ListItem>
+      <ListItem className={classes.listItem}><a className={classes.navLink} href="https://agilewriter-workshop.auth.us-east-1.amazoncognito.com/login?response_type=code&client_id=1p1lco5v2jiko3p34dqon9i3m5&redirect_uri=http://localhost:8080/index.html&scope=email&state=STATE" >Login</a></ListItem>
+      <ListItem className={classes.listItem}><a className={classes.navLink} href="https://agilewriter-workshop.auth.us-east-1.amazoncognito.com/login?response_type=code&client_id=1p1lco5v2jiko3p34dqon9i3m5&redirect_uri=http://localhost:8080/index.html&scope=email&state=STATE">Register</a></ListItem>
     </List>
   );
 }
