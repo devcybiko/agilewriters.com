@@ -19,11 +19,14 @@ import styles from "assets/jss/material-kit-react/components/headerLinksStyle.js
 const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
-  const classes = useStyles();
-  return (
-    <List className={classes.list}>
-      <ListItem className={classes.listItem}><a className={classes.navLink} href="https://agilewriter-workshop.auth.us-east-1.amazoncognito.com/login?response_type=code&client_id=1p1lco5v2jiko3p34dqon9i3m5&redirect_uri=http://localhost:8080/index.html&scope=email&state=STATE" >Login</a></ListItem>
-      <ListItem className={classes.listItem}><a className={classes.navLink} href="https://agilewriter-workshop.auth.us-east-1.amazoncognito.com/login?response_type=code&client_id=1p1lco5v2jiko3p34dqon9i3m5&redirect_uri=http://localhost:8080/index.html&scope=email&state=STATE">Register</a></ListItem>
-    </List>
-  );
+    const classes = useStyles();
+    let loggedin = Cookies.get("loggedin") === "true";
+    return (
+            <List className={classes.list}>
+            {!loggedin ? (<ListItem className={classes.listItem}><a className={classes.navLink} href="https://agilewriter-workshop.auth.us-east-1.amazoncognito.com/login?client_id=1vvqmdehb7iv0fdpqf3ne0r4qs&response_type=code&scope=email+openid&redirect_uri=http://localhost:8080/auth/login&state=STATE" >Login</a></ListItem>) :
+                        (<ListItem className={classes.listItem}><a className={classes.navLink} href="http://localhost:8080/auth/logout">Logout</a></ListItem>)
+            }
+            <ListItem className={classes.listItem}><a className={classes.navLink} href="http://localhost:8080/auth/validate">Validate</a></ListItem>
+        </List>
+    );
 }

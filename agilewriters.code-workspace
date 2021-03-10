@@ -1,15 +1,27 @@
 {
 	"folders": [
-		{
-			"path": "."
-		},
-		{
-			"path": "../glstools"
-		},
-		{
-			"path": "../java-udemy"
-		}
-	],
+        {
+            "path": "."
+        },
+        {
+            "path": "../glstools"
+        },
+        {
+            "path": "../java-udemy"
+        },
+        {
+            "path": "../../../../Users/greg/Google Drive/bin"
+        },
+        {
+            "path": "../smtp-fun"
+        },
+        {
+            "path": "../aws-fun"
+        },
+        {
+            "path": "../gex"
+        }
+    ],
     "settings": {
         "java.configuration.updateBuildConfiguration": "automatic"
     }
